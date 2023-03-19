@@ -5,7 +5,7 @@
 #include "wk.h"
 #include "cParts/cModel/cObj/cObjBase/pl/pl00.h"
 
-#define MAX_PLAYER_COUNT 3
+#define MAX_PLAYER_COUNT 2
 
 struct PlayerPacket
 {
@@ -81,7 +81,7 @@ int main(int argc, char** argv)
 
 
         /* Wait up to 10 milliseconds for an event. */
-        while (enet_host_service(server, &event, 1) > 0)
+        while (enet_host_service(server, &event, 10) > 0)
         {
             switch (event.type)
             {
